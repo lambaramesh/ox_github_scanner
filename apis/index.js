@@ -2,15 +2,16 @@ const { ApolloServer, gql } = require('apollo-server');
 const { Octokit } = require('@octokit/rest');
 const YAML = require('js-yaml');
 const fetch = require('node-fetch');
+require('dotenv').config(); // Load environment variables from .env file
 
 
 const octokit = new Octokit({
-    auth: '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',
+    auth: process.env.GITHUB_PAT,
     request: { fetch },
 });
 
 
-const OWNER = 'lambaramesh';
+const OWNER = process.env.OWNER;
 
 
 const typeDefs = gql`
