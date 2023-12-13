@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 
 
 const octokit = new Octokit({
-    auth: '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',
+    auth: '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',
     request: { fetch },
 });
 
